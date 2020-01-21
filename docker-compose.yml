@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  app:
+    image: rancher/rancher:latest
+    restart: unless-stopped
+    # Traefik labels are suggested as an example for people using Traefik,
+    # remove them if you are using another reverse proxy.
+    labels:
+      traefik.enable: 'true'
+      traefik.frontend.rule: "Host:${HOSTNAME}"
+      traefik.port: '80'
+    # If you don't want to use a reverse proxy (not suitable for production!)
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
+    #command: [ " --acme-domain ${HOSTNAME}" ]
+    volumes:
+      - data:/var/lib/rancher
+
+volumes:
+  data:
