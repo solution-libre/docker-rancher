@@ -10,6 +10,9 @@ services:
       traefik.enable: 'true'
       traefik.frontend.rule: "Host:${HOSTNAME}"
       traefik.port: '80'
+    expose:
+      - "80"
+      - "443"
     # If you don't want to use a reverse proxy (not suitable for production!)
     #ports:
     #  - "80:80"
