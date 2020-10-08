@@ -20,6 +20,7 @@ services:
     #command: [ " --acme-domain ${HOSTNAME}" ]
     volumes:
       - data:/var/lib/rancher
+    privileged: true
 
 volumes:
   data:
