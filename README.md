@@ -11,7 +11,7 @@
 
 ## Description
 
-Docker-compose setup for starting [Rancher](https://rancher.com/).
+[Docker Compose](https://docs.docker.com/compose/) setup for starting [Rancher](https://rancher.com/) with [Træfik](https://traefik.io/).
 
 ## Setup
 
@@ -21,7 +21,7 @@ git clone https://github.com/solution-libre/docker-rancher.git rancher
 cd rancher
 ```
 
-Change the hostname value in `.env`.
+Declare environment variables or copy the `.env.dist` to `.env` and adjust its values.
 
 ## Usage
 
@@ -33,6 +33,10 @@ docker-compose up -d
 ## Reference
 
 ### Environment variables
+
+#### `HOSTNAME`
+
+The hostname. Default value: 'domain.tld'
 
 ## Development
 
